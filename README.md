@@ -1,28 +1,22 @@
-# rover
-Contains the main control program to run on the Mars rover.
+This is the ros kinetic package that I have built to control my little 3d printed rover.
 
-## Dependencies:
+It is designed to be used on my virtual linux PC.
 
-- WiringPi (http://wiringpi.com/download-and-install/)
-- OpenCV (https://opencv.org/)
-- pca9685 (https://github.com/Reinbert/pca9685)
-This needs to be cloned into the "include" folder.
-- rosserial (http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup)
+Things to do to make it do things:
+1. Install ros kinetic and be running a version of ubuntu that supports it
+2. The explorerhat must be installed, can be done through "curl http://get.pimoroni.com/explorerhat | bash"
+2. Ensure your ROS_MASTER_URI is set to the IP of the mainframe
+3. run "catkin_make" in the ws_ folder
+4. run "source devel/setup.bash" to ensure ros can access the package
+5. run "rosrun piraterover MotorCommander.py"
 
-## Subscriptions:
 
-Topic:       **hbeat**<br />
-Msg type:    std_msgs/Empty<br />
-Description: Listens for heartbeat from base station in order to determine whether or not we have lost comms.
+
+# MotorCommander.py
+turns the xbox commands into wheel motions. It doesn't do much, just receives the pre-procesed wheel percentages from the mainframe and applies it to the motors
+
+### Subscriptions
 
 Topic:       **cmd_data**<br />
 Msg type:    rover/DriveCmd (custom)<br />
-Description: Receives speed and steering commands from the base station.
-
-Topic:       **encoders**<br />
-Msg type:    rover/RPM (custom)<br />
-Description: Receives RPM values reported by the Arduino connected to the wheel encoders.
-
-Topic:		 **ball**<br />
-Msg Type:	 rover/Ball (custom)<br />
-Description: Receives x,y position and radius of a tennis ball on the webcam video stream.
+Description: Sends speed and steering commands to the rover.

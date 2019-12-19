@@ -1,0 +1,8 @@
+prefix=/home/pirate/GitKracked/ws_FinalPirateRover/devel
+
+Name: piraterover
+Description: Description of piraterover
+Version: 0.0.3
+Cflags: -I/home/pirate/GitKracked/ws_FinalPirateRover/devel/include
+Libs: -L/home/pirate/GitKracked/ws_FinalPirateRover/devel/lib 
+Requires: message_generation rospy

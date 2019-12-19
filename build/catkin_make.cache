@@ -1,0 +1,2 @@
+piraterover
+-DCATKIN_DEVEL_PREFIX=/home/pirate/GitKracked/ws_FinalPirateRover/devel -DCMAKE_INSTALL_PREFIX=/home/pirate/GitKracked/ws_FinalPirateRover/install -G Unix Makefiles
